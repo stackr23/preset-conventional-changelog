@@ -31,15 +31,13 @@ env: NODE_ENV=develop
 jobs:
   fast_finish: true
   allow_failures:
-    - node_js: 10
+    - node_js: 11
     - os: windows # Windows builds are in early access stage.
     # - os: osx
   include:
     - os: linux
       node_js:
         - 12
-        - 11
-        - 10
     - os: osx
       node_js: 12
     - os: windows
@@ -48,7 +46,7 @@ jobs:
       if: branch = master AND type IN (push) AND tag IS blank AND (commit_message !~ /chore\(release\)/)
       node_js: 12
       script: skip
-      install: npm i -g semantic-release @semantic-release/commit-analyzer @semantic-release/release-notes-generator @semantic-release/changelog @semantic-release/npm @semantic-release/git @semantic-release/github semantic-release-slack-bot
+      install: npm i -g @stackr23/conventional-changelog-config semantic-release @semantic-release/commit-analyzer @semantic-release/release-notes-generator @semantic-release/changelog @semantic-release/npm @semantic-release/git @semantic-release/github semantic-release-slack-bot
       deploy:
         provider: script
         cleanup: false
