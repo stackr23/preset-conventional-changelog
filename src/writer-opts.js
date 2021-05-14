@@ -8,19 +8,20 @@ const resolve = require('path').resolve
 // the actual order in the changelog...
 const types = [
   { type: 'feat', section: ':sparkles: Features' },
-  { type: 'fix', section: ':bug: Bug Fixes' },
-  { type: 'refactor', section: ':building_construction: Refactoring' },
-  { type: 'style', section: ':art: Styling' },
 
   { type: 'task', section: ':hammer_and_wrench: Tasks and Scripts' },
   { type: 'script', section: ':hammer_and_wrench: Tasks and Scripts' },
 
-  { type: 'deps', section: ':package: Dependencies' },
-  { type: 'docs', section: ':memo: Documentations' },
-  { type: 'test', section: ':white_check_mark: Tests' },
-  { type: 'ci', section: ':construction_worker: Continuous Integration' },
-  { type: 'perf', section: ':zap: Performance Enhancement' },
+  { type: 'fix', section: ':bug: Bug Fixes' },
+  { type: 'style', section: ':art: Styling' },
   { type: 'build', section: ':hammer_and_wrench: Build System' },
+  { type: 'ci', section: ':construction_worker: Continuous Integration' },
+  { type: 'test', section: ':white_check_mark: Tests' },
+  { type: 'refactor', section: ':building_construction: Refactoring' },
+
+  { type: 'perf', section: ':zap: Performance Enhancement' },
+  { type: 'docs', section: ':memo: Documentations' },
+  { type: 'deps', section: ':package: Dependencies' },
   { type: 'revert', section: ':rewind: Reverts' },
 ]
 // achieved throug orderMap
