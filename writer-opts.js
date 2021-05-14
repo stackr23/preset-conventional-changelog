@@ -24,12 +24,11 @@ const types = [
   { type: 'revert', section: ':rewind: Reverts' },
 ]
 // achieved throug orderMap
-const sectionOrder = new Map(types.map((o, i) => o.type).map((s, i) => [ s, i ]))
+const sectionOrder = new Map(types.map((o, i) => o.section).map((s, i) => [ s, i ]))
 // and custom sorting by map keys
 function commitGroupsSort(groupA, groupB) {
-  const rankA = sectionOrder.has(groupA.type) ? sectionOrder.get(groupA.type) : 1000
-  const rankB = sectionOrder.has(groupB.type) ? sectionOrder.get(groupB.type) : 1000
-
+  const rankA = sectionOrder.has(groupA.title) ? sectionOrder.get(groupA.title) : 1000
+  const rankB = sectionOrder.has(groupB.title) ? sectionOrder.get(groupB.title) : 1000
   return rankA - rankB
 }
 // easy acces to titles
