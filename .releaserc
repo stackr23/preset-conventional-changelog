@@ -20,7 +20,7 @@
     [
       "@semantic-release/release-notes-generator",
       {
-        "config": "@stackr23/conventional-changelog-config",
+        "config": "@stackr23/conventional-changelog-config"
       }
     ],
     [
