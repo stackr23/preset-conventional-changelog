@@ -34,9 +34,9 @@ function getWriterOpts () {
       })
 
       if (commit.type === 'feat') {
-        commit.type = 'Features'
+        commit.type = '✨ Features'
       } else if (commit.type === 'fix') {
-        commit.type = 'Bug Fixes'
+        commit.type = '🐛 Bug Fixes'
       } else if (commit.type === 'perf') {
         commit.type = 'Performance Improvements'
       } else if (commit.type === 'revert' || commit.revert) {
@@ -44,7 +44,7 @@ function getWriterOpts () {
       } else if (discard) {
         return
       } else if (commit.type === 'docs') {
-        commit.type = 'Documentation'
+        commit.type = '📚 Documentation'
       } else if (commit.type === 'style') {
         commit.type = 'Styles'
       } else if (commit.type === 'refactor') {
@@ -52,9 +52,9 @@ function getWriterOpts () {
       } else if (commit.type === 'test') {
         commit.type = 'Tests'
       } else if (commit.type === 'build') {
-        commit.type = 'Build System'
+        commit.type = '🛠️ Build System'
       } else if (commit.type === 'ci') {
-        commit.type = 'Continuous Integration'
+        commit.type = '🤖 Continuous Integration'
       }
 
       if (commit.scope === '*') {
