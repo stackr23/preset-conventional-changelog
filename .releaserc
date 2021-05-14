@@ -1,0 +1,54 @@
+{
+  "branches": ["master"],
+  "repositoryUrl": "https://github.com/stackr23/mrm",
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "angular",
+        "config": "@stackr23/conventional-changelog-config",
+        "releaseRules": [
+          {"type": "fix", "release": "patch"},
+          {"type": "build", "release": "patch"},
+          {"type": "style", "release": "patch"},
+          {"type": "deps", "release": "patch"},
+          {"type": "docs", "release": "patch"},
+          {"type": "perf", "release": "patch"}
+        ]
+      }
+    ],
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        "config": "@stackr23/conventional-changelog-config",
+      }
+    ],
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogFile": "CHANGELOG.md",
+        "changelogTitle": "# Changelog\n\n> generated with [@semantic-release/changelog](https://github.com/semantic-release/changelog)"
+      }
+    ],
+    [
+      "@semantic-release/npm",
+      {
+        "npmPublish": true,
+        "tarballDir": "releases"
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": [
+          "CHANGELOG.md",
+          "package.json"
+        ],
+        "message": "chore(release): 🤖🔖🚀 v${nextRelease.version} \n\n${nextRelease.notes} [skip ci]"
+      }
+    ],
+    [
+      "@semantic-release/github"
+    ]
+  ]
+}
