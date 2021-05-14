@@ -1,5 +1,6 @@
 {
   "name": "@stackr23/conventional-changelog-config",
+  "version": "1.0.0",
   "author": "Stefan Friedl",
   "scripts": {
     "lint": "eslint --fix --ext \".js,.jsx,.ts,.tsx\" . --quiet --format pretty && prettier **/*.{css,scss,md,json} --write"
@@ -7,6 +8,11 @@
   "homepage": "https://github.com/stackr23/conventional-changelog-config#readme",
   "bugs": "https://github.com/stackr23/conventional-changelog-config/issues",
   "description": "Stackr23 config for conventional-changelog",
+  "private": false,
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
   "bundleDependencies": false,
   "dependencies": {
     "compare-func": "^2.0.0",
@@ -36,7 +42,6 @@
     "type": "git",
     "url": "git+https://github.com/stackr23/conventional-changelog-config.git"
   },
-  "version": "5.0.12",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
