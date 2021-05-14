@@ -2,9 +2,11 @@
 
 > generated with [@semantic-release/changelog](https://github.com/semantic-release/changelog)
 
+## [1.1.2](https://github.com/stackr23/conventional-changelog-config/compare/v1.1.1...v1.1.2) (2021-05-14)
 
+### :memo: Documentations
 
-### [1.1.2](https://github.com/stackr23/conventional-changelog-config/compare/v1.1.1...v1.1.2) (2021-05-14)
+- **README:** add type adaptions (0e7b4b4 (https://github.com/stackr23/conventional-changelog-config/commit/0e7b4b44e08750b7ef3ab127a4106e9f8a6f050f)
 
 ## [1.1.1](https://github.com/stackr23/conventional-changelog-config/compare/v1.1.0...v1.1.1) (2021-05-14)
 
