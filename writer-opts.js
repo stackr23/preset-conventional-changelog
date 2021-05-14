@@ -5,64 +5,47 @@ const Q = require('q')
 const readFile = Q.denodeify(require('fs').readFile)
 const resolve = require('path').resolve
 
-module.exports = Q.all([
-  readFile(resolve(__dirname, './templates/template.hbs'), 'utf-8'),
-  readFile(resolve(__dirname, './templates/header.hbs'), 'utf-8'),
-  readFile(resolve(__dirname, './templates/commit.hbs'), 'utf-8'),
-  readFile(resolve(__dirname, './templates/footer.hbs'), 'utf-8')
-])
-  .spread((template, header, commit, footer) => {
-    const writerOpts = getWriterOpts()
-
-    writerOpts.mainTemplate = template
-    writerOpts.headerPartial = header
-    writerOpts.commitPartial = commit
-    writerOpts.footerPartial = footer
-
-    return writerOpts
-  })
-
 // the actual order in the changelog...
 const types = [
-  { type: "feat", section: ":sparkles: Features"},
-  { type: "fix", section: ":bug: Bug Fixes" },
-  { type: "refactor", section: ":building_construction: Refactoring"},
-  { type: "style", section: ":art: Styling" },
+  { type: 'feat', section: ':sparkles: Features' },
+  { type: 'fix', section: ':bug: Bug Fixes' },
+  { type: 'refactor', section: ':building_construction: Refactoring' },
+  { type: 'style', section: ':art: Styling' },
 
-  { type: "task", section: ":hammer_and_wrench: Tasks and Scripts" },
-  { type: "script", section: ":hammer_and_wrench: Tasks and Scripts" },
+  { type: 'task', section: ':hammer_and_wrench: Tasks and Scripts' },
+  { type: 'script', section: ':hammer_and_wrench: Tasks and Scripts' },
 
-  { type: "deps", section: ":package: Dependencies" },
-  { type: "docs", section: ":memo: Documentations" },
-  { type: "test", section: ":white_check_mark: Tests" },
-  { type: "build", section: ":construction_worker: Continuous Integration" },
-  { type: "perf", section: ":zap: Performance Enhancement" },
-  { type: "ci", section: ":hammer_and_wrench: Build System" },
-  { type: "revert", section: ":rewind: Reverts" },
+  { type: 'deps', section: ':package: Dependencies' },
+  { type: 'docs', section: ':memo: Documentations' },
+  { type: 'test', section: ':white_check_mark: Tests' },
+  { type: 'build', section: ':construction_worker: Continuous Integration' },
+  { type: 'perf', section: ':zap: Performance Enhancement' },
+  { type: 'ci', section: ':hammer_and_wrench: Build System' },
+  { type: 'revert', section: ':rewind: Reverts' },
 ]
 // achieved throug orderMap
-let sectionOrder = new Map(types.map((o, i) => o.type).map((s, i) => [s, i]))
+const sectionOrder = new Map(types.map((o, i) => o.type).map((s, i) => [ s, i ]))
 // and custom sorting by map keys
 function commitGroupsSort(groupA, groupB) {
-  const rankA = sectionOrder.has(groupA.type) ? sectionOrder.get(groupA.type) : 1000;
-  const rankB = sectionOrder.has(groupB.type) ? sectionOrder.get(groupB.type) : 1000;
+  const rankA = sectionOrder.has(groupA.type) ? sectionOrder.get(groupA.type) : 1000
+  const rankB = sectionOrder.has(groupB.type) ? sectionOrder.get(groupB.type) : 1000
 
-  return rankA - rankB;
+  return rankA - rankB
 }
 // easy acces to titles
 const sectionsTitles = {} // = _.indexBy(types, 'type')
 types.map((o, i) => { sectionsTitles[o.type] = o.section })
 
-function getWriterOpts () {
+function getWriterOpts() {
   return {
     types,
     transform: (commit, context) => {
-      let discard = true
+      // let discard = true
       const issues = []
 
-      commit.notes.forEach(note => {
+      commit.notes.forEach((note) => {
         note.title = 'BREAKING CHANGES'
-        discard = false
+        // discard = false
       })
 
       // set type group titles
@@ -102,7 +85,7 @@ function getWriterOpts () {
       }
 
       // remove references that already appear in the subject
-      commit.references = commit.references.filter(reference => {
+      commit.references = commit.references.filter((reference) => {
         if (issues.indexOf(reference.issue) === -1) {
           return true
         }
@@ -112,10 +95,27 @@ function getWriterOpts () {
 
       return commit
     },
-    groupBy: 'type',
+    groupBy:        'type',
     commitGroupsSort,
-    commitsSort: ['scope', 'subject'],
+    commitsSort:    [ 'scope', 'subject' ],
     noteGroupsSort: 'title',
-    notesSort: compareFunc
+    notesSort:      compareFunc,
   }
 }
+
+module.exports = Q.all([
+  readFile(resolve(__dirname, './templates/template.hbs'), 'utf-8'),
+  readFile(resolve(__dirname, './templates/header.hbs'), 'utf-8'),
+  readFile(resolve(__dirname, './templates/commit.hbs'), 'utf-8'),
+  readFile(resolve(__dirname, './templates/footer.hbs'), 'utf-8'),
+])
+  .spread((template, header, commit, footer) => {
+    const writerOpts = getWriterOpts()
+
+    writerOpts.mainTemplate = template
+    writerOpts.headerPartial = header
+    writerOpts.commitPartial = commit
+    writerOpts.footerPartial = footer
+
+    return writerOpts
+  })

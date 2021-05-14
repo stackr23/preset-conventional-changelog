@@ -62,7 +62,29 @@
     "url": "git+https://github.com/conventional-changelog/conventional-changelog.git"
   },
   "scripts": {
-    "test-windows": "mocha --timeout 30000"
+    "test-windows": "mocha --timeout 30000",
+    "lint": "eslint --fix --ext \".js,.jsx,.ts,.tsx\" . --quiet --format pretty && prettier **/*.{css,scss,md,json} --write"
   },
-  "version": "5.0.12"
+  "version": "5.0.12",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{css,scss,json,md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix --quiet",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@stackr23/config-eslint": "^2.0.0",
+    "eslint": "^7.26.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0"
+  }
 }
