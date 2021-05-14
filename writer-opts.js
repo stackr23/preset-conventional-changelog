@@ -22,8 +22,31 @@ module.exports = Q.all([
     return writerOpts
   })
 
+// the actual order in the changelog...
+const types = [
+  { type: "feat", section: ":sparkles: Features"},
+  { type: "fix", section: ":bug: Bug Fixes" },
+  { type: "refactor", section: ":building_construction: Refactoring"},
+  { type: "style", section: ":art: Styling" },
+
+  { type: "task", section: ":hammer_and_wrench: Tasks and Scripts" },
+  { type: "script", section: ":hammer_and_wrench: Tasks and Scripts" },
+
+  { type: "deps", section: ":package: Dependencies" },
+  { type: "docs", section: ":memo: Documentations" },
+  { type: "test", section: ":white_check_mark: Tests" },
+  { type: "build", section: ":construction_worker: Continuous Integration" },
+  { type: "perf", section: ":zap: Performance Enhancement" },
+  { type: "ci", section: ":hammer_and_wrench: Build System" },
+  { type: "revert", section: ":rewind: Reverts" },
+]
+// easy acces to titles
+const sectionsTitles = {} // = _.indexBy(types, 'type')
+types.map((o, i) => { sectionsTitles[o.type] = o.section })
+
 function getWriterOpts () {
   return {
+    types,
     transform: (commit, context) => {
       let discard = true
       const issues = []
@@ -33,29 +56,9 @@ function getWriterOpts () {
         discard = false
       })
 
-      if (commit.type === 'feat') {
-        commit.type = 'Features'
-      } else if (commit.type === 'fix') {
-        commit.type = 'Bug Fixes'
-      } else if (commit.type === 'perf') {
-        commit.type = 'Performance Improvements'
-      } else if (commit.type === 'revert' || commit.revert) {
-        commit.type = 'Reverts'
-      } else if (discard) {
-        return
-      } else if (commit.type === 'docs') {
-        commit.type = 'Documentation'
-      } else if (commit.type === 'style') {
-        commit.type = 'Styles'
-      } else if (commit.type === 'refactor') {
-        commit.type = 'Code Refactoring'
-      } else if (commit.type === 'test') {
-        commit.type = 'Tests'
-      } else if (commit.type === 'build') {
-        commit.type = 'Build System'
-      } else if (commit.type === 'ci') {
-        commit.type = 'Continuous Integration'
-      }
+      // set type group titles
+      if (sectionsTitles[commit.type] == null) return
+      commit.type = sectionsTitles[commit.type] || commit.type
 
       if (commit.scope === '*') {
         commit.scope = ''
