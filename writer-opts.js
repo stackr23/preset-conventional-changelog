@@ -40,6 +40,15 @@ const types = [
   { type: "ci", section: ":hammer_and_wrench: Build System" },
   { type: "revert", section: ":rewind: Reverts" },
 ]
+// achieved throug orderMap
+let sectionOrder = new Map(types.map((o, i) => o.type).map((s, i) => [s, i]))
+// and custom sorting by map keys
+function commitGroupsSort(groupA, groupB) {
+  const rankA = sectionOrder.has(groupA.type) ? sectionOrder.get(groupA.type) : 1000;
+  const rankB = sectionOrder.has(groupB.type) ? sectionOrder.get(groupB.type) : 1000;
+
+  return rankA - rankB;
+}
 // easy acces to titles
 const sectionsTitles = {} // = _.indexBy(types, 'type')
 types.map((o, i) => { sectionsTitles[o.type] = o.section })
@@ -104,7 +113,7 @@ function getWriterOpts () {
       return commit
     },
     groupBy: 'type',
-    commitGroupsSort: 'title',
+    commitGroupsSort,
     commitsSort: ['scope', 'subject'],
     noteGroupsSort: 'title',
     notesSort: compareFunc
