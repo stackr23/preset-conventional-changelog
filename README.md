@@ -7,6 +7,22 @@
 
 Angular's [commit message guidelines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit).
 
+### Type Additions
+
+| **TYPE**     | **TITLE**                                    | **BUMP** |
+| ------------ | -------------------------------------------- | :------: |
+| **feat**     | :sparkles: Features                          |  minor   |
+| **fix**      | :bug: Bug Fixes                              |  patch   |
+| **build**    | :hammer_and_wrench: Build System             |  patch   |
+| **style**    | :art: Styling                                |  patch   |
+| **deps**     | :package: Dependencies                       |  patch   |
+| **docs**     | :memo: Documentations                        |  patch   |
+| **test**     | :white_check_mark: Tests                     |    -     |
+| **refactor** | :building_construction: Refactoring          |    -     |
+| **ci**       | :construction_worker: Continuous Integration |    -     |
+| **perf**     | :zap: Performance Enhancement                |    -     |
+| **revert**   | :rewind: Reverts                             |    -     |
+
 ### Examples
 
 Appears under "Features" header, pencil subheader:
