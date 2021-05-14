@@ -18,9 +18,9 @@ const types = [
   { type: 'deps', section: ':package: Dependencies' },
   { type: 'docs', section: ':memo: Documentations' },
   { type: 'test', section: ':white_check_mark: Tests' },
-  { type: 'build', section: ':construction_worker: Continuous Integration' },
+  { type: 'ci', section: ':construction_worker: Continuous Integration' },
   { type: 'perf', section: ':zap: Performance Enhancement' },
-  { type: 'ci', section: ':hammer_and_wrench: Build System' },
+  { type: 'build', section: ':hammer_and_wrench: Build System' },
   { type: 'revert', section: ':rewind: Reverts' },
 ]
 // achieved throug orderMap
