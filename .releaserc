@@ -1,6 +1,6 @@
 {
   "branches": ["master"],
-  "repositoryUrl": "https://github.com/stackr23/mrm",
+  "repositoryUrl": "https://github.com/stackr23/conventional-changelog-config",
   "plugins": [
     [
       "@semantic-release/commit-analyzer",
