@@ -1,33 +1,7 @@
 {
-  "_from": "conventional-changelog-angular",
-  "_id": "conventional-changelog-angular@5.0.12",
-  "_inBundle": false,
-  "_integrity": "sha512-5GLsbnkR/7A89RyHLvvoExbiGbd9xKdKqDTrArnPbOqBqG/2wIosu0fHwpeIRI8Tl94MhVNBXcLJZl92ZQ5USw==",
-  "_location": "/conventional-changelog-angular",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "conventional-changelog-angular",
-    "name": "conventional-changelog-angular",
-    "escapedName": "conventional-changelog-angular",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
-  },
-  "_requiredBy": [
-    "#DEV:/",
-    "#USER"
-  ],
-  "_resolved": "https://registry.npmjs.org/conventional-changelog-angular/-/conventional-changelog-angular-5.0.12.tgz",
-  "_shasum": "c979b8b921cbfe26402eb3da5bbfda02d865a2b9",
-  "_spec": "conventional-changelog-angular",
-  "_where": "X:\\HTDOCS\\packages_linked",
-  "author": {
-    "name": "Steve Mao"
-  },
+  "author": "Stefan Friedl",
   "bugs": {
-    "url": "https://github.com/conventional-changelog/conventional-changelog/issues"
+    "url": "https://github.com/stackr23/conventional-changelog-preset/issues"
   },
   "bundleDependencies": false,
   "dependencies": {
@@ -35,7 +9,7 @@
     "q": "^1.5.1"
   },
   "deprecated": false,
-  "description": "conventional-changelog angular preset",
+  "description": "StackR23 preset for conventional-changelog",
   "engines": {
     "node": ">=10"
   },
@@ -48,21 +22,27 @@
     "templates"
   ],
   "gitHead": "cc567b98facf71315f4b1620d81ce01d155efaca",
-  "homepage": "https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular#readme",
+  "homepage": "https://github.com//stackr23/conventional-changelog-preset#readme",
   "keywords": [
     "conventional-changelog",
-    "angular",
+    "stackr23",
     "preset"
   ],
   "license": "ISC",
   "main": "index.js",
-  "name": "conventional-changelog-angular",
+  "name": "@stackr23/conventional-changelog-preset",
+  "private": false,
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/conventional-changelog/conventional-changelog.git"
+    "url": "git+https://github.com/stackr23/conventional-changelog-preset.git"
   },
-  "scripts": {
-    "test-windows": "mocha --timeout 30000"
-  },
-  "version": "5.0.12"
+  "scripts": {},
+  "version": "5.0.12",
+  "devDependencies": {
+    "conventional-changelog-core": "^4.2.2"
+  }
 }

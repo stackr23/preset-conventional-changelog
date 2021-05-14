@@ -32,30 +32,58 @@ function getWriterOpts () {
         note.title = 'BREAKING CHANGES'
         discard = false
       })
-
-      if (commit.type === 'feat') {
-        commit.type = '✨ Features'
-      } else if (commit.type === 'fix') {
-        commit.type = '🐛 Bug Fixes'
-      } else if (commit.type === 'perf') {
-        commit.type = 'Performance Improvements'
-      } else if (commit.type === 'revert' || commit.revert) {
-        commit.type = 'Reverts'
-      } else if (discard) {
-        return
-      } else if (commit.type === 'docs') {
-        commit.type = '📚 Documentation'
-      } else if (commit.type === 'style') {
-        commit.type = 'Styles'
-      } else if (commit.type === 'refactor') {
-        commit.type = 'Code Refactoring'
-      } else if (commit.type === 'test') {
-        commit.type = 'Tests'
-      } else if (commit.type === 'build') {
-        commit.type = '🛠️ Build System'
-      } else if (commit.type === 'ci') {
-        commit.type = '🤖 Continuous Integration'
+      
+      // set section title
+      const types = [
+        { type: "feat", section: ":sparkles: Features"},
+        { type: "fix", section: ":bug: Bug Fixes" },
+        { type: "refactor", section: ":building_construction: Refactoring"},
+        { type: "style", section: ":art: Styling" },
+        { type: "docs", section: ":memo: Documentations" },
+        { type: "perf", section: ":zap: Performance Enhancement" },
+        { type: "revert", section: ":rewind: Reverts" },
+        { type: "test", section: ":white_check_mark: Tests" },
+        { type: "build", section: ":construction_worker: Continuous Integration" },
+        { type: "ci", section: ":hammer_and_wrench: Build System" },
+      ]
+      
+      const sectionsTitles = {}
+      types.map((o, i) => { sectionsTitles[o.type] = o.section })
+      
+      console.log(sectionsTitles)
+      
+      let sectionOrder = new Map(
+        types.map((o, i) => o.section)
+          .map((s, i) => [s, i])
+      )
+      
+      console.log(sectionOrder)
+      
+      function commitGroupsSort(groupA, groupB) {
+        const rankA = sectionsOrder.has(groupA.title) ? sectionsOrder.get(groupA.title) : 1000;
+        const rankB = sectionsOrder.has(groupB.title) ? sectionsOrder.get(groupB.title) : 1000;
+      
+        return rankA - rankB;
       }
+      
+      function compareStrings(a, b) {
+        if (a < b) return -1;
+        if (a > b) return 1;
+      
+        return 0;
+      }
+      
+      function commitsSort(commitA, commitB) {
+        const scopeRank = compareStrings(commitA.scope, commitB.scope);
+      
+        if (scopeRank === 0) return compareStrings(commitA.subject, commitB.subject);
+        if (!commitA.scope) return 1;
+        if (!commitB.scope) return -1;
+      
+        return scopeRank;
+      }
+
+      commit.type = sectionsTitles[commit.type]
 
       if (commit.scope === '*') {
         commit.scope = ''
@@ -101,7 +129,7 @@ function getWriterOpts () {
       return commit
     },
     groupBy: 'type',
-    commitGroupsSort: 'title',
+    commitGroupsSort, // 'title'
     commitsSort: ['scope', 'subject'],
     noteGroupsSort: 'title',
     notesSort: compareFunc
