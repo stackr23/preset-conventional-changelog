@@ -1,5 +1,9 @@
-[![NPM Release](https://img.shields.io/npm/v/@stackr23/conventional-changelog-config.svg?style=flat)](https://www.npmjs.com/package/%40stackr23%2Fconventional-changelog-config)
+[![Build Status](https://travis-ci.com/stackr23/conventional-changelog-config.svg?token=9j4kv11sMyqyMRAPNQXm&branch=master)](https://travis-ci.com/stackr23/conventional-changelog-config) [![NPM Release](https://img.shields.io/npm/v/@stackr23/conventional-changelog-config.svg?style=flat)](https://www.npmjs.com/package/%40stackr23%2Fconventional-changelog-config)
 [![Conventional Commits](https://img.shields.io/badge/✔-Conventional%20Commits-blue.svg)](https://conventionalcommits.org)
+[![Semantic Versioning][semantic-img]][semantic-url]
+
+[semantic-img]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-blue.svg
+[semantic-url]: https://semver.org/
 
 **Issues with the convention itself should be reported on the Angular issue tracker.**
 
