@@ -2,6 +2,15 @@
 
 > generated with [@semantic-release/changelog](https://github.com/semantic-release/changelog)
 
+
+
+### [1.1.4](https://github.com/stackr23/conventional-changelog-config/compare/v1.1.3...v1.1.4) (2021-05-15)
+
+
+### Bug Fixes
+
+* **npm:** use right pattern for src files ([1819f22](https://github.com/stackr23/conventional-changelog-config/commit/1819f2292197b1bf56980a0b700e89ea8c700443))
+
 ### [1.1.3](https://github.com/stackr23/conventional-changelog-config/compare/v1.1.2...v1.1.3) (2021-05-15)
 
 ### :bug: Bug Fixes
