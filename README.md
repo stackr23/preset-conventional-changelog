@@ -20,7 +20,7 @@ Angular's [commit message guidelines](https://github.com/angular/angular/blob/ma
 | **build**    | :hammer_and_wrench: Build System             |  patch   |
 | **style**    | :art: Styling                                |  patch   |
 | **deps**     | :package: Dependencies                       |  patch   |
-| **docs**     | :memo: Documentations                        |  patch   |
+| **docs**     | :memo: Documentations                        |    -     |
 | **test**     | :white_check_mark: Tests                     |    -     |
 | **refactor** | :building_construction: Refactoring          |    -     |
 | **ci**       | :construction_worker: Continuous Integration |    -     |
