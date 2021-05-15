@@ -104,10 +104,10 @@ function getWriterOpts() {
 }
 
 module.exports = Q.all([
-  readFile(resolve(__dirname, './templates/template.hbs'), 'utf-8'),
-  readFile(resolve(__dirname, './templates/header.hbs'), 'utf-8'),
-  readFile(resolve(__dirname, './templates/commit.hbs'), 'utf-8'),
-  readFile(resolve(__dirname, './templates/footer.hbs'), 'utf-8'),
+  readFile(resolve(__dirname, '../templates/template.hbs'), 'utf-8'),
+  readFile(resolve(__dirname, '../templates/header.hbs'), 'utf-8'),
+  readFile(resolve(__dirname, '../templates/commit.hbs'), 'utf-8'),
+  readFile(resolve(__dirname, '../templates/footer.hbs'), 'utf-8'),
 ])
   .spread((template, header, commit, footer) => {
     const writerOpts = getWriterOpts()
