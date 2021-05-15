@@ -2,15 +2,12 @@
 
 > generated with [@semantic-release/changelog](https://github.com/semantic-release/changelog)
 
-
-
 ### [1.1.3](https://github.com/stackr23/conventional-changelog-config/compare/v1.1.2...v1.1.3) (2021-05-15)
 
+### :bug: Bug Fixes
 
-### Bug Fixes
-
-* **npm:** add src files to pckg ([7c3c7b8](https://github.com/stackr23/conventional-changelog-config/commit/7c3c7b889723a7003d6c4e972f9c57d5401996c9))
-* **release:** dont patch on 'docs' ([8b59d15](https://github.com/stackr23/conventional-changelog-config/commit/8b59d15c405c021aefa8f86bf44635051691c794))
+- **npm:** add src files to pckg ([7c3c7b8](https://github.com/stackr23/conventional-changelog-config/commit/7c3c7b889723a7003d6c4e972f9c57d5401996c9))
+- **release:** dont patch on 'docs' ([8b59d15](https://github.com/stackr23/conventional-changelog-config/commit/8b59d15c405c021aefa8f86bf44635051691c794))
 
 ## [1.1.2](https://github.com/stackr23/conventional-changelog-config/compare/v1.1.1...v1.1.2) (2021-05-14)
 
