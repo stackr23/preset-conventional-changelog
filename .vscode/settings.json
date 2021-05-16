@@ -26,5 +26,10 @@
     "editor.formatOnPaste": false,
     "editor.formatOnSave": false,
     "editor.formatOnType": false
+  },
+  "[handlebars]": {
+    "editor.formatOnSave": false,
+    "editor.formatOnPaste": false,
+    "editor.formatOnType": false
   }
 }

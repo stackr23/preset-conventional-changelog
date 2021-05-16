@@ -1,3 +1,1 @@
-{
-  "extends": "./node_modules/@stackr23/config-eslint/env/react.js"
-}
+{ "extends": "./node_modules/@stackr23/config-eslint/env/react.js" }
