@@ -6,23 +6,34 @@ const readFile = Q.denodeify(require('fs').readFile)
 const resolve = require('path').resolve
 
 // the actual order in the changelog...
-const types = [
-  { type: 'feat', section: ':sparkles: Features' },
+const types = [ // TODO: export for release-config (commit-analizer)
+  // new features
+  { type: 'feat', section: ':sparkles: Features', shouldBump: 'minor' },
+  // bug fixes
+  { type: 'fix', section: ':bug: Bug Fixes', shouldBump: 'patch' },
+  // dev tasks (mrm, gulp, grunt, ...)
+  { type: 'task', section: ':hammer_and_wrench: Tasks and Scripts', shouldBump: 'patch' },
+  // user scripts (npm-scripts, husky, bash, ...)
+  { type: 'script', section: ':hammer_and_wrench: Tasks and Scripts', shouldBump: 'patch' },
+  // refactoring - structure improvements
+  { type: 'refactor', section: ':building_construction: Refactoring', shouldBump: false },
+  // build scripts for /dist (bash, babel, webpack, ...)
+  { type: 'build', section: ':hammer_and_wrench: Build System', shouldBump: 'patch' },
+  // theme and UI changes
+  { type: 'style', section: ':art: Styling', shouldBump: 'patch' },
+  // performance enhancements
+  { type: 'perf', section: ':zap: Performance', shouldBump: false },
+  // changes in tests - add, upgrade, remove, ...
+  { type: 'test', section: ':white_check_mark: Tests', shouldBump: false },
+  // changes in continuous integration - TravisCI / CircleCI
+  { type: 'ci', section: ':construction_worker: Continuous Integration', shouldBump: false },
+  // changes in documentations - README, WIKI, CHANGELOG, ...
+  { type: 'docs', section: ':memo: Documentations', shouldBump: false },
+  // changes in dependencies - add, upgrade, remove, ...
+  { type: 'deps', section: ':package: Dependencies', shouldBump: 'patch' },
 
-  { type: 'task', section: ':hammer_and_wrench: Tasks and Scripts' },
-  { type: 'script', section: ':hammer_and_wrench: Tasks and Scripts' },
-
-  { type: 'fix', section: ':bug: Bug Fixes' },
-  { type: 'style', section: ':art: Styling' },
-  { type: 'build', section: ':hammer_and_wrench: Build System' },
-  { type: 'ci', section: ':construction_worker: Continuous Integration' },
-  { type: 'test', section: ':white_check_mark: Tests' },
-  { type: 'refactor', section: ':building_construction: Refactoring' },
-
-  { type: 'perf', section: ':zap: Performance Enhancement' },
-  { type: 'docs', section: ':memo: Documentations' },
-  { type: 'deps', section: ':package: Dependencies' },
-  { type: 'revert', section: ':rewind: Reverts' },
+  // revert status - TODO: how to use
+  { type: 'revert', section: ':rewind: Reverts', shouldBump: false },
 ]
 // achieved throug orderMap
 const sectionOrder = new Map(types.map((o, i) => o.section).map((s, i) => [ s, i ]))

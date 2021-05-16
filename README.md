@@ -5,27 +5,27 @@
 [semantic-img]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-blue.svg
 [semantic-url]: https://semver.org/
 
-**Issues with the convention itself should be reported on the Angular issue tracker.**
-
 ## StackR23 config - based on angular preset
 
 Angular's [commit message guidelines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit).
 
 ### Type Additions
 
-| **TYPE**     | **TITLE**                                    | **BUMP** |
-| ------------ | -------------------------------------------- | :------: |
-| **feat**     | :sparkles: Features                          |  minor   |
-| **fix**      | :bug: Bug Fixes                              |  patch   |
-| **build**    | :hammer_and_wrench: Build System             |  patch   |
-| **style**    | :art: Styling                                |  patch   |
-| **deps**     | :package: Dependencies                       |  patch   |
-| **docs**     | :memo: Documentations                        |    -     |
-| **test**     | :white_check_mark: Tests                     |    -     |
-| **refactor** | :building_construction: Refactoring          |    -     |
-| **ci**       | :construction_worker: Continuous Integration |    -     |
-| **perf**     | :zap: Performance Enhancement                |    -     |
-| **revert**   | :rewind: Reverts                             |    -     |
+| **TYPE**     | **TITLE**                                    | **TARGET**                                                     |
+| ------------ | -------------------------------------------- | -------------------------------------------------------------- |
+| **feat**     | :sparkles: Features                          | **new Features**                                               |
+| **fix**      | :bug: Bug Fixes                              | **fixed Bugs**                                                 |
+| **task**     | :hammer_and_wrench: Tasks and Scripts        | **fixed Bugs**                                                 |
+| **script**   | :hammer_and_wrench: Tasks and Scripts        | **fixed Bugs**                                                 |
+| **refactor** | :building_construction: Refactoring          | **Structure Improvements**                                     |
+| **build**    | :hammer_and_wrench: Build System             | **Build Scripts for /dist**<br/>(_bash, babel, webpack, ..._)  |
+| **style**    | :art: Styling                                | **Theme and UI changes**                                       |
+| **perf**     | :zap: Performance                            | **Performance Enhancements**                                   |
+| **test**     | :white_check_mark: Tests                     | **changes in Tests**<br/>(_add, upgrade, remove, ..._)         |
+| **ci**       | :construction_worker: Continuous Integration | **CI changes** (_TravisCI, CircleCI, ..._)                     |
+| **docs**     | :memo: Documentations                        | **Documentation changes**<br/>(_README, WIKI, CHANGELOG, ..._) |
+| **deps**     | :package: Dependencies                       | **Dependency changes**<br/>(_add, upgrade, remove, ..._)       |
+| **revert**   | :rewind: Reverts                             | **Revert Commit**                                              |
 
 ### Examples
 
