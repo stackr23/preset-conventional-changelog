@@ -1,3 +1,18 @@
+# Changelog
+
+> generated with [@semantic-release/changelog](https://github.com/semantic-release/changelog)
+
+
+
+### [1.1.5](https://github.com/stackr23/conventional-changelog-config/compare/v1.1.4...v1.1.5) (2021-05-16)
+
+
+### Bug Fixes
+
+* **vsCode:** dont format handlebars files ([3e6735b](https://github.com/stackr23/conventional-changelog-config/commit/3e6735b24338d7632ddb779968991620c3ac4572))
+* reorder type groups ([70c8c3a](https://github.com/stackr23/conventional-changelog-config/commit/70c8c3a223470240270ba3b7936e691afc840822))
+* **templates:** use relative paths ([3a44c6e](https://github.com/stackr23/conventional-changelog-config/commit/3a44c6e201f9199544153675836c8cfb97296e2d))
+
 ## [1.1.4](https://github.com/stackr23/conventional-changelog-config/compare/v1.1.3...v1.1.4) (2021-05-15)
 
 
@@ -91,6 +106,3 @@
 ### :memo: Documentations
 
 * add CHANGELOG ([ed5e1f7](https://github.com/stackr23/conventional-changelog-config/commit/ed5e1f7d583455bfa597f77be70dec18cfef2a59))
-
-
-
