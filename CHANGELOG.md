@@ -4,6 +4,14 @@
 
 
 
+## [1.1.6](https://github.com/stackr23/conventional-changelog-config/compare/v1.1.5...v1.1.6) (2021-05-17)
+
+
+### :bug: Bug Fixes
+
+* change type definitions ([f8242e7](https://github.com/stackr23/conventional-changelog-config/commit/f8242e7273458b8e5c6286d66b34e057b0b30841))
+* **release:** remove 'conventionalcommits' preset ([2f94cd6](https://github.com/stackr23/conventional-changelog-config/commit/2f94cd65d2a09dca91a78e73fc8a30590fb765e7))
+
 ### [1.1.5](https://github.com/stackr23/conventional-changelog-config/compare/v1.1.4...v1.1.5) (2021-05-16)
 
 
