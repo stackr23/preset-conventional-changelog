@@ -11,21 +11,21 @@ Angular's [commit message guidelines](https://github.com/angular/angular/blob/ma
 
 ### Type Additions
 
-| **TYPE**     | **TITLE**                                    | **TARGET**                                                     |
-| ------------ | -------------------------------------------- | -------------------------------------------------------------- |
-| **feat**     | :sparkles: Features                          | **new Features**                                               |
-| **fix**      | :bug: Bug Fixes                              | **fixed Bugs**                                                 |
-| **task**     | :hammer_and_wrench: Tasks and Scripts        | **fixed Bugs**                                                 |
-| **script**   | :hammer_and_wrench: Tasks and Scripts        | **fixed Bugs**                                                 |
-| **refactor** | :building_construction: Refactoring          | **Structure Improvements**                                     |
-| **build**    | :hammer_and_wrench: Build System             | **Build Scripts for /dist**<br/>(_bash, babel, webpack, ..._)  |
-| **style**    | :art: Styling                                | **Theme and UI changes**                                       |
-| **perf**     | :zap: Performance                            | **Performance Enhancements**                                   |
-| **test**     | :white_check_mark: Tests                     | **changes in Tests**<br/>(_add, upgrade, remove, ..._)         |
-| **ci**       | :construction_worker: Continuous Integration | **CI changes** (_TravisCI, CircleCI, ..._)                     |
-| **docs**     | :memo: Documentations                        | **Documentation changes**<br/>(_README, WIKI, CHANGELOG, ..._) |
-| **deps**     | :package: Dependencies                       | **Dependency changes**<br/>(_add, upgrade, remove, ..._)       |
-| **revert**   | :rewind: Reverts                             | **Revert Commit**                                              |
+| **TYPE**     | **TITLE**                                    | **TARGET**                                                        |
+| ------------ | -------------------------------------------- | ----------------------------------------------------------------- |
+| **feat**     | :sparkles: Features                          | **new Features**                                                  |
+| **fix**      | :bug: Bug Fixes                              | **fixed Bugs**                                                    |
+| **refactor** | :recycle: Refactoring                        | **Structure Improvements**                                        |
+| **script**   | :hammer_and_wrench: Scripts and Tasks        | **Development Scripts**<br/>(_Gulp/Grunt, npm scripts, MRM, ..._) |
+| **build**    | :building_construction: Build System         | **Build Scripts for /dist**<br/>(_bash, babel, webpack, ..._)     |
+| **config**   | :wrench: Configs                             | **Config changes**<br />(_app configs, dotfiles, ..._)            |
+| **style**    | :art: Styling                                | **Theme and UI changes**                                          |
+| **perf**     | :zap: Performance                            | **Performance Enhancements**                                      |
+| **test**     | :white_check_mark: Tests                     | **changes in Tests**<br/>(_add, upgrade, remove, ..._)            |
+| **ci**       | :construction_worker: Continuous Integration | **CI changes** (_TravisCI, CircleCI, ..._)                        |
+| **docs**     | :memo: Documentations                        | **Documentation changes**<br/>(_README, WIKI, CHANGELOG, ..._)    |
+| **deps**     | :package: Dependencies                       | **Dependency changes**<br/>(_add, upgrade, remove, ..._)          |
+| **revert**   | :rewind: Reverts                             | **Revert Commit**                                                 |
 
 ### Examples
 
