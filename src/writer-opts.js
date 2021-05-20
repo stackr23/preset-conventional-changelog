@@ -4,6 +4,8 @@ const compareFunc = require('compare-func')
 const Q = require('q')
 const readFile = Q.denodeify(require('fs').readFile)
 const resolve = require('path').resolve
+var emojiRegex = require('emoji-regex')
+const regexEmojis = emojiRegex()
 
 // TODO: export for release-config (commit-analizer)
 // and try to combine with CZ
@@ -58,11 +60,20 @@ function getWriterOpts() {
     transform: (commit, context) => {
       // let discard = true
       const issues = []
+      let match
 
       commit.notes.forEach((note) => {
         note.title = 'BREAKING CHANGES'
         // discard = false
       })
+
+      // TODO: where to filter PRE-transform!?
+      if ((match = regexEmojis.exec(commit.header)) != null) {
+        console.log(match != null)
+        console.log('before :>> ', commit.header)
+        commit.header = (commit.header).replace(match[0], '').substr(1)
+        console.log('after :>> ', commit.header)
+      }
 
       // set type group titles
       if (sectionsTitles[commit.type] == null) return

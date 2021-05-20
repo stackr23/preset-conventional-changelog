@@ -1,7 +1,7 @@
 'use strict'
 
 module.exports = {
-  headerPattern:        /^(\w*)(?:\((.*)\))?: (.*)$/,
+  headerPattern:        /(\w*)(?:\((.*)\))?: (.*)$/,
   // adaption for emoji-commits
   // headerPattern:        /^(?::\w*:)\s(?<type>\w*)(?:\((?<scope>.*)\))?!?:\s(?<subject>(?:(?!#).)*(?:(?!\s).))\s?(?<ticket>#\d*)?$/,
   headerCorrespondence: [ 'type', 'scope', 'subject', 'ticket' ],
