@@ -13,32 +13,30 @@ const resolve = require('path').resolve
 // the actual order in the changelog...
 const types = [
   // new features
-  { type: 'feat', section: ':sparkles: Features', shouldBump: 'minor' },
+  { type: 'feat', section: ':sparkles: Features', release: 'minor' },
   // bug fixes
-  { type: 'fix', section: ':bug: Bug Fixes', shouldBump: 'patch' },
+  { type: 'fix', section: ':beetle: Bug Fixes', release: 'patch' },
+  // configuration files - env setup (vsCode, eslint, webpack, release, travis, ...)
+  { type: 'config', section: ':wrench: Configs', release: 'patch' },
+  // user scripts (npm-scripts, husky, bash, gulp/grunt,...)
+  { type: 'script', section: ':hammer_and_wrench: Tasks and Scripts', release: 'patch' },
+  // themes, UI and assets
+  { type: 'style', section: ':art: Styling', release: 'patch' },
+  // dependencies - NPM packages and other 3rd party resources
+  { type: 'deps', section: ':package: Dependencies', release: 'patch' },
+
+  // NO VERSION BUMP:
+  //
   // refactoring - structure improvements
-  { type: 'refactor', section: ':recycle: Refactoring', shouldBump: false },
-  // user scripts (npm-scripts, husky, bash, ...)
-  { type: 'script', section: ':hammer_and_wrench: Tasks and Scripts', shouldBump: 'patch' },
-  // build scripts for /dist (bash, babel, webpack, ...)
-  { type: 'build', section: ':building_construction: Build System', shouldBump: 'patch' },
-  // theme and UI changes
-  { type: 'config', section: ':wrench: Configs', shouldBump: 'patch' },
-  // theme and UI changes
-  { type: 'style', section: ':art: Styling', shouldBump: 'patch' },
-  // performance enhancements
-  { type: 'perf', section: ':zap: Performance', shouldBump: false },
-  // changes in tests - add, upgrade, remove, ...
-  { type: 'test', section: ':white_check_mark: Tests', shouldBump: false },
-  // changes in continuous integration - TravisCI / CircleCI
-  { type: 'ci', section: ':construction_worker: Continuous Integration', shouldBump: false },
+  { type: 'refactor', section: ':building_construction: Refactoring', release: false },
+  // karma, mocha/chai/enzyme, cypress - setup and specations
+  { type: 'test', section: ':white_check_mark: Test System', release: false },
   // changes in documentations - README, WIKI, CHANGELOG, ...
-  { type: 'docs', section: ':memo: Documentations', shouldBump: false },
+  { type: 'docs', section: ':memo: Documentations', release: false },
   // changes in dependencies - add, upgrade, remove, ...
-  { type: 'deps', section: ':package: Dependencies', shouldBump: 'patch' },
 
   // revert status - TODO: how to use
-  { type: 'revert', section: ':rewind: Reverts', shouldBump: false },
+  { type: 'revert', section: ':rewind: Reverts', release: false },
 ]
 // achieved throug orderMap
 const sectionOrder = new Map(types.map((o, i) => o.section).map((s, i) => [ s, i ]))
