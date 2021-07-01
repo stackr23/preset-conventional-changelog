@@ -1,14 +1,14 @@
 {
-  "name": "@stackr23/conventional-changelog-config",
+  "name": "@stackr23/preset-conventional-changelog",
   "version": "1.1.6",
   "author": "Stefan Friedl",
   "scripts": {
     "test": "echo 'no testscript defined'",
     "lint": "eslint --fix --ext \".js,.jsx,.ts,.tsx\" . --quiet --format pretty && prettier **/*.{css,scss,md,json} --write"
   },
-  "homepage": "https://github.com/stackr23/conventional-changelog-config#readme",
-  "bugs": "https://github.com/stackr23/conventional-changelog-config/issues",
-  "description": "Stackr23 config for conventional-changelog",
+  "homepage": "https://github.com/stackr23/preset-conventional-changelog#readme",
+  "bugs": "https://github.com/stackr23/preset-conventional-changelog/issues",
+  "description": "Stackr23 preset for conventional-changelog",
   "private": false,
   "publishConfig": {
     "access": "public",
@@ -38,7 +38,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stackr23/conventional-changelog-config.git"
+    "url": "git+https://github.com/stackr23/preset-conventional-changelog.git"
   },
   "husky": {
     "hooks": {
