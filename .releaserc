@@ -1,5 +1,5 @@
 {
-  "branches": ["master"],
+  "branches": ["master", "main"],
   "repositoryUrl": "https://github.com/stackr23/preset-conventional-changelog",
   "plugins": [
     [
