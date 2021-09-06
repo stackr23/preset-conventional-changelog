@@ -5,7 +5,7 @@
     [
       "@semantic-release/commit-analyzer",
       {
-        "config": "@stackr23/conventional-changelog-config",
+        "config": "@stackr23/preset-conventional-changelog",
         "releaseRules": [
           {"type": "feat", "release": "minor"},
           {"type": "fix", "release": "patch"},
@@ -18,7 +18,7 @@
     ],
     [
       "@semantic-release/release-notes-generator",
-      {"config": "@stackr23/conventional-changelog-config"}
+      {"config": "@stackr23/preset-conventional-changelog"}
     ],
     [
       "@semantic-release/changelog",

@@ -1,0 +1,29 @@
+name: Semantic Release
+on:
+  push:
+    branches:
+      - 'main'
+      - 'master'
+    tags-ignore:
+      - '**'
+jobs:
+  semantic_release:
+    name: Semantic Release Process
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+      - name: Install Semantic Release Packages
+        run: npm i -g @stackr23/preset-conventional-changelog semantic-release @semantic-release/commit-analyzer @semantic-release/release-notes-generator @semantic-release/changelog @semantic-release/npm @semantic-release/git @semantic-release/github
+      - name: Exec Semantic Release
+        run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
