@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: 14
       - name: Install Semantic Release Packages
-        run: npm i -g @stackr23/conventional-changelog-config semantic-release @semantic-release/commit-analyzer @semantic-release/release-notes-generator @semantic-release/changelog @semantic-release/npm @semantic-release/git @semantic-release/github
+        run: npm i -g @stackr23/preset-conventional-changelog semantic-release @semantic-release/commit-analyzer @semantic-release/release-notes-generator @semantic-release/changelog @semantic-release/npm @semantic-release/git @semantic-release/github
       - name: Exec Semantic Release
         run: npx semantic-release
         env:
