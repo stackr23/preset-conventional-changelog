@@ -2,6 +2,22 @@
 
 > generated with [@semantic-release/changelog](https://github.com/semantic-release/changelog)
 
+## [1.1.7](https://github.com/stackr23/preset-conventional-changelog/compare/v1.1.6...v1.1.7) (2021-09-06)
+
+### :recycle: Refactoring
+
+* rename pckg to 'preset-conventional-changelog' ([73af829](https://github.com/stackr23/preset-conventional-changelog/commit/73af829286e04de66cc12c740d1463850b821dc5))
+
+### :wrench: Configs
+
+* add 'main' branch to release config ([7381ae1](https://github.com/stackr23/preset-conventional-changelog/commit/7381ae1b33e7931be1e4ca25b6bd5c3d214b30ec))
+* **types:** change type definitions ([37ee872](https://github.com/stackr23/preset-conventional-changelog/commit/37ee8721fdd374ac5df8cf2c91b5a326f2c3ef6a))
+
+### :memo: Documentations
+
+* **CHANGELOG:** generate with new type definitions
+* **README:** adapt to new type definitions ([7a12a1f](https://github.com/stackr23/preset-conventional-changelog/commit/7a12a1fc0c456273fff22dbde269fe5d5b8dcc8a))
+
 ## [1.1.6](https://github.com/stackr23/preset-conventional-changelog/compare/v1.1.5...v1.1.6) (2021-05-17)
 
 ### :beetle: Bug Fixes
