@@ -2,6 +2,15 @@
 
 > generated with [@semantic-release/changelog](https://github.com/semantic-release/changelog)
 
+
+
+# [1.2.0](https://github.com/stackr23/preset-conventional-changelog/compare/v1.1.7...v1.2.0) (2021-09-06)
+
+
+### :sparkles: Features
+
+* **CI:** add semantic-release process ([#1](https://github.com/stackr23/preset-conventional-changelog/issues/1)) ([061d2ef](https://github.com/stackr23/preset-conventional-changelog/commit/061d2ef22d361088eda0736651430ea730cacf3e))
+
 ## [1.1.7](https://github.com/stackr23/preset-conventional-changelog/compare/v1.1.6...v1.1.7) (2021-09-06)
 
 ### :recycle: Refactoring

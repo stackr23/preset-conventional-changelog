@@ -1,5 +1,5 @@
 {
-  "version": "1.1.7",
+  "version": "1.2.0",
   "name": "@stackr23/preset-conventional-changelog",
   "description": "Stackr23's preset for conventional-changelog",
   "author": "Stefan Friedl",
@@ -9,14 +9,23 @@
     "lint": "eslint --fix --ext \".js,.jsx,.ts,.tsx\" . --quiet --format pretty && prettier **/*.{css,scss,md,json} --write"
   },
   "main": "index.js",
-  "files": ["index.js", "src/*", "templates/*"],
+  "files": [
+    "index.js",
+    "src/*",
+    "templates/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/stackr23/preset-conventional-changelog.git"
   },
   "homepage": "https://github.com/stackr23/preset-conventional-changelog#readme",
   "bugs": "https://github.com/stackr23/preset-conventional-changelog/issues",
-  "keywords": ["conventional-changelog", "stackr23", "preset", "config"],
+  "keywords": [
+    "conventional-changelog",
+    "stackr23",
+    "preset",
+    "config"
+  ],
   "publishConfig": {
     "access": "public",
     "tag": "latest"
