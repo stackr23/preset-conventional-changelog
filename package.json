@@ -1,48 +1,55 @@
 {
+  "version": "1.1.6",
+  "name": "@stackr23/preset-conventional-changelog",
+  "description": "Stackr23 preset for conventional-changelog",
   "author": "Stefan Friedl",
-  "bugs": {
-    "url": "https://github.com/stackr23/conventional-changelog-preset/issues"
+  "license": "MIT",
+  "scripts": {
+    "test": "echo 'no testscript defined'",
+    "lint": "eslint --fix --ext \".js,.jsx,.ts,.tsx\" . --quiet --format pretty && prettier **/*.{css,scss,md,json} --write"
   },
+  "main": "index.js",
+  "files": ["index.js", "src/*", "templates/*"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stackr23/preset-conventional-changelog.git"
+  },
+  "homepage": "https://github.com/stackr23/preset-conventional-changelog#readme",
+  "bugs": "https://github.com/stackr23/preset-conventional-changelog/issues",
+  "keywords": ["conventional-changelog", "stackr23", "preset", "config"],
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "private": false,
   "bundleDependencies": false,
   "dependencies": {
     "compare-func": "^2.0.0",
     "q": "^1.5.1"
   },
   "deprecated": false,
-  "description": "StackR23 preset for conventional-changelog",
   "engines": {
     "node": ">=10"
   },
-  "files": [
-    "conventional-changelog.js",
-    "conventional-recommended-bump.js",
-    "index.js",
-    "parser-opts.js",
-    "writer-opts.js",
-    "templates"
-  ],
-  "gitHead": "cc567b98facf71315f4b1620d81ce01d155efaca",
-  "homepage": "https://github.com//stackr23/conventional-changelog-preset#readme",
-  "keywords": [
-    "conventional-changelog",
-    "stackr23",
-    "preset"
-  ],
-  "license": "ISC",
-  "main": "index.js",
-  "name": "@stackr23/conventional-changelog-preset",
-  "private": false,
-  "publishConfig": {
-    "access": "public",
-    "tag": "latest"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/stackr23/conventional-changelog-preset.git"
+  "lint-staged": {
+    "*.{css,scss,json,md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix --quiet",
+      "git add"
+    ]
   },
-  "scripts": {},
-  "version": "5.0.12",
   "devDependencies": {
-    "conventional-changelog-core": "^4.2.2"
+    "@stackr23/config-eslint": "^2.0.0",
+    "eslint": "^7.26.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0"
   }
 }

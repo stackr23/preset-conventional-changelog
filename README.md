@@ -1,12 +1,28 @@
-# [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage Status][coveralls-image]][coveralls-url]
+[![Build Status](https://travis-ci.com/stackr23/preset-conventional-changelog.svg?token=9j4kv11sMyqyMRAPNQXm&branch=master)](https://travis-ci.com/stackr23/preset-conventional-changelog) [![NPM Release](https://img.shields.io/npm/v/@stackr23/preset-conventional-changelog.svg?style=flat)](https://www.npmjs.com/package/%40stackr23%2Fpreset-conventional-changelog)
+[![Conventional Commits](https://img.shields.io/badge/✔-Conventional%20Commits-blue.svg)](https://conventionalcommits.org)
+[![Semantic Versioning][semantic-img]][semantic-url]
 
-> [conventional-changelog](https://github.com/ajoslin/conventional-changelog) [angular](https://github.com/angular/angular) preset
+[semantic-img]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-blue.svg
+[semantic-url]: https://semver.org/
 
-**Issues with the convention itself should be reported on the Angular issue tracker.**
-
-## Angular Convention
+## StackR23 config - based on angular preset
 
 Angular's [commit message guidelines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit).
+
+### Type Definitions
+
+| **TYPE**     | **TITLE**                             | **TARGET**                                                        |
+| ------------ | ------------------------------------- | ----------------------------------------------------------------- |
+| **feat**     | :sparkles: Features                   | **new Features**                                                  |
+| **fix**      | :bug: Bug Fixes                       | **fixed Bugs**                                                    |
+| **config**   | :wrench: Configs                      | **Config changes**<br />(_babel, webpack, travis, dotfiles, ..._) |
+| **script**   | :hammer_and_wrench: Scripts and Tasks | **Development Scripts**<br/>(_Gulp/Grunt, npm scripts, MRM, ..._) |
+| **style**    | :art: Styling                         | **Theme and UI changes**                                          |
+| **deps**     | :package: Dependencies                | **Dependency changes**<br/>(_add, upgrade, remove, ..._)          |
+| **refactor** | :building_construction: Refactoring   | **Structure Improvements**                                        |
+| **test**     | :white_check_mark: Tests              | **changes in Tests**<br/>(_add, upgrade, remove, ..._)            |
+| **docs**     | :memo: Documentations                 | **Documentation changes**<br/>(_README, WIKI, CHANGELOG, ..._)    |
+| **revert**   | :rewind: Reverts                      | **Revert Commit**                                                 |
 
 ### Examples
 
@@ -42,7 +58,7 @@ This reverts commit 667ecc1654a317a13331b17617d973392f415f02.
 
 ### Commit Message Format
 
-A commit message consists of a **header**, **body** and **footer**.  The header has a **type**, **scope** and **subject**:
+A commit message consists of a **header**, **body** and **footer**. The header has a **type**, **scope** and **subject**:
 
 ```
 <type>(<scope>): <subject>
@@ -75,9 +91,9 @@ The scope could be anything specifying place of the commit change. For example `
 
 The subject contains succinct description of the change:
 
-* use the imperative, present tense: "change" not "changed" nor "changes"
-* don't capitalize first letter
-* no dot (.) at the end
+- use the imperative, present tense: "change" not "changed" nor "changes"
+- don't capitalize first letter
+- no dot (.) at the end
 
 ### Body
 
@@ -92,13 +108,3 @@ reference GitHub issues that this commit **Closes**.
 **Breaking Changes** should start with the word `BREAKING CHANGE:` with a space or two newlines. The rest of the commit message is then used for this.
 
 A detailed explanation can be found in this [document](#commit-message-format).
-
-[npm-image]: https://badge.fury.io/js/conventional-changelog-angular.svg
-[npm-url]: https://npmjs.org/package/conventional-changelog-angular
-[travis-image]: https://travis-ci.org/conventional-changelog/conventional-changelog-angular.svg?branch=master
-[travis-url]: https://travis-ci.org/conventional-changelog/conventional-changelog-angular
-[daviddm-image]: https://david-dm.org/conventional-changelog/conventional-changelog-angular.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/conventional-changelog/conventional-changelog-angular
-[coveralls-image]: https://coveralls.io/repos/conventional-changelog/conventional-changelog-angular/badge.svg
-[coveralls-url]: https://coveralls.io/r/conventional-changelog/conventional-changelog-angular
-[commit-message-format]: https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#
